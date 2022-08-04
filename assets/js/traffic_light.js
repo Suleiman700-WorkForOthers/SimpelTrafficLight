@@ -26,12 +26,6 @@ class traffic_light {
 
     // Show orange traffic light
     show_orange() {
-        // // Reset all traffic lights
-        // this.reset_traffic_light()
-
-        // Show red traffic light
-        // this.show_red()
-
         // Show orange traffic light
         document.getElementById(this.orange).style.backgroundColor = 'orange'
 
