@@ -15,12 +15,31 @@ const init = () => {
     traffic.show_red()
 }
 
+/**
+ * Enable or disable button
+ * @param _option {Boolean}
+ */
+const enable_btn = (_option) => {
+    if (_option) {
+        // Enable button
+        btn.removeAttribute('disabled')
+
+        // Change button text
+        btn.innerText = 'Start Traffic Light'
+    }
+    else {
+        // Disable button
+        btn.setAttribute('disabled', 'disabled')
+
+        // Change button text
+        btn.innerText = 'Started'
+    }
+}
+
+
 btn.addEventListener('click', (e) => {
     // Disable button
-    btn.setAttribute('disabled', 'disabled')
-
-    // Change button text
-    btn.innerText = 'Started'
+    enable_btn(false)
 
     traffic.show_orange()
 
@@ -37,10 +56,7 @@ btn.addEventListener('click', (e) => {
                     traffic.show_red()
 
                     // Enable button
-                    btn.removeAttribute('disabled')
-
-                    // Change button text
-                    btn.innerText = 'Start Traffic Light'
+                    enable_btn(true)
                 }, 2000)
 
             })
